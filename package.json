@@ -43,7 +43,7 @@
     "moment": "^2.21.0",
     "morgan": "^1.9.0",
     "nanode": "^2.2.1",
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "object-assign": "4.1.1",
     "pidusage": "^2.0.6",
     "postcss-flexbugs-fixes": "3.2.0",
