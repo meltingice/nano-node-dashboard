@@ -3,6 +3,9 @@ import redis from "redis";
 import config from "../../../server-config.json";
 
 const redisClient = redis.createClient(config.redis);
+redisClient.on("error", err => {
+  console.error("Redis unavailable");
+});
 const zRangeByScore = promisify(redisClient.zrangebyscore.bind(redisClient));
 
 const STORAGE_KEY = `nano-control-panel/${config.redisNamespace ||

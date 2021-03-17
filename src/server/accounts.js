@@ -6,6 +6,9 @@ import clientConfig from "../client-config.json";
 import Currency from "../lib/Currency";
 
 const redisClient = redis.createClient(config.redis);
+redisClient.on("error", err => {
+  console.error("Redis unavailable");
+});
 const nano = new Nano({ url: config.nodeHost });
 
 async function calculateAccountList() {
